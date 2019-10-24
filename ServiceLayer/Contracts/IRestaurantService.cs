@@ -11,6 +11,7 @@ namespace ServiceLayer.Contracts
         Restaurant CreateNewRestaurant(Restaurant restaurant);
         List<Restaurant> GetAllWithBasicDetails();
         List<MealType> GetAllMealTypesByRestaurantId(int restaurantid);
-        List<MealCategory> GetMealCategories();
+        List<Area> GetAreas();
+        List<RestaurantCategory> GetRestaurantCategories();
     }
 }

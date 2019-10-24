@@ -23,6 +23,31 @@ namespace Web.ApiHelpers
                 msg.EnsureSuccessStatusCode();
             }
         }
+
+        public async Task<List<RestaurantCategoryResponseDTO>> GetAllRestaurantCategories()
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                client.BaseAddress = new Uri(baseUrl);
+                HttpResponseMessage msg = await client.GetAsync("restaurants/categories");
+                msg.EnsureSuccessStatusCode();
+                var result = await msg.Content.ReadAsAsync<List<RestaurantCategoryResponseDTO>>();
+                return result;
+            }
+        }
+
+        public async Task<List<AreaResponseDTO>> GetAllAreas()
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                client.BaseAddress = new Uri(baseUrl);
+                HttpResponseMessage msg = await client.GetAsync("restaurants/areas");
+                msg.EnsureSuccessStatusCode();
+                var result = await msg.Content.ReadAsAsync<List<AreaResponseDTO>>();
+                return result;
+            }
+        }
+
         public async Task<List<RestaurantBasicResponseDTO>> GetAllRestaurants()
         {
             using (HttpClient client = new HttpClient())
@@ -59,7 +84,14 @@ namespace Web.ApiHelpers
 
         public async Task AddnewMeal(AddMealViewModel meal)
         {
-
+            using (HttpClient client = new HttpClient())
+            {
+                client.BaseAddress = new Uri(baseUrl);
+                var httpContent = new StringContent(JsonConvert.SerializeObject(meal), Encoding.UTF8, "application/json");
+                HttpResponseMessage msg = await client.PostAsync("restaurants/add-meal", httpContent);
+                msg.EnsureSuccessStatusCode();
+            }
         }
+
     }
 }

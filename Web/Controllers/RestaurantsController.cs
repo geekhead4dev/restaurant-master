@@ -17,15 +17,23 @@ namespace Web.Controllers
         {
             return View();
         }
-        public IActionResult Create()
-        {
-            return View();
-        }
         public IActionResult Success()
         {
             return View();
         }
 
+        public async Task<IActionResult> Create()
+        {
+            // get all areas
+            var areas = await restaurantApi.GetAllAreas();
+            // get all restaurant categories
+            var restaurantCategories = await restaurantApi.GetAllRestaurantCategories();
+
+            ViewBag.RestaurantCategoryId = restaurantCategories;
+            ViewBag.AreaId = areas;
+            return View();
+        }
+      
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(CreateRestaurantViewModel model)
@@ -47,19 +55,19 @@ namespace Web.Controllers
                 await restaurantApi.CreateRestaurant(model);
                 return RedirectToAction("Success");
             }
+
+            var areas = await restaurantApi.GetAllAreas(); 
+            var restaurantCategories = await restaurantApi.GetAllRestaurantCategories();
+
+            ViewBag.RestaurantCategoryId = restaurantCategories;
+            ViewBag.AreaId = areas; 
             return View(model);
         }
 
         public async Task<IActionResult> AddMeal()
-        {
-            // get all restaurants
-            // get all general meal categories
-            // get mealTypes for restaurant
-
-
+        {  
             var allRestaurants = await restaurantApi.GetAllRestaurants();
             var mealCategories = await restaurantApi.GetAllMealCategories();
-
             ViewBag.RestaurantId = allRestaurants;
             ViewBag.MealCategoryId = mealCategories;
 
@@ -72,6 +80,13 @@ namespace Web.Controllers
         {
             if (ModelState.IsValid)
             {
+                var file = Request.Form.Files[0];
+                if(file != null && file.Length > 0)
+                {
+                    string uri = SaveImageAndGetUri();
+                    model.ImageUrl = uri;
+                }
+
                 await restaurantApi.AddnewMeal(model);
                 return RedirectToAction("Success");
             }

@@ -23,6 +23,9 @@ namespace Web.Models
         public string Description { get; set; }
         public int Priority { get; set; }
 
+        public int RestaurantCategoryId { get; set; }
+        public int AreaId { get; set; }
+
         public string MondayFromHour { get; set; }
         public string MondayFromMinute { get; set; }
         public string MondayToHour { get; set; }
@@ -86,11 +89,13 @@ namespace Web.Models
         [Display(Name = "General Priority")]
         public int GeneralPriority { get; set; }
 
-        [Required]
+        [Required, Range(1,int.MaxValue, ErrorMessage ="You must select a Restaurant")]
         public int RestaurantId { get; set; }
-        [Required]
+
+        [Required, Range(1, int.MaxValue, ErrorMessage = "You must select a Meal category")]
         public int MealCategoryId { get; set; }
-        [Required]
+
+        [Required, Range(1, int.MaxValue, ErrorMessage = "You must select a Meal type")]
         public int MealTypeId { get; set; }
 
          

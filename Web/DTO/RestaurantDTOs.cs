@@ -21,4 +21,14 @@ namespace Web.DTO
         public int Id { get; set; }
         public string Name { get; set; }
     }
+    public class AreaResponseDTO
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+    }
+    public class RestaurantCategoryResponseDTO
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+    }
 }

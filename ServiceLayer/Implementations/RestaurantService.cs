@@ -51,7 +51,7 @@ namespace ServiceLayer.Implementations
             return uow.MealTypeRepository.QueryAll()
                 .Where(x => x.RestaurantId == restaurantid).ToList();
         }
-        public List<MealCategory>GetMealCategories()
+        public List<MealCategory>GetAreas()
         {
             return uow.MealCategoryRepository.GetAll().ToList();
         }
@@ -60,9 +60,21 @@ namespace ServiceLayer.Implementations
         public IQueryable<Restaurant> GetAllIncluding()
         {
             var results = uow.RestaurantRepository.GetAllIncluding(r => r.RestaurantImages)
-                .Include(r => r.WorkingHours);
+                .Include(r => r.WorkingHours)
+                .Include(r => r.RestaurantCategory)
+                .Include(r => r.Area);
 
             return results;
+        }
+
+        List<Area> IRestaurantService.GetAreas()
+        {
+            return uow.AreaRepository.GetAll().ToList();
+        }
+
+        public List<RestaurantCategory> GetRestaurantCategories()
+        {
+            return uow.RestaurantCategoryRepository.GetAll().ToList();
         }
     }
 }

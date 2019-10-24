@@ -15,9 +15,26 @@ namespace Data.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.2.6-servicing-10079")
+                .HasAnnotation("ProductVersion", "2.2.0-rtm-35687")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+            modelBuilder.Entity("DomainModel.Area", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("DateCreated");
+
+                    b.Property<DateTime>("DateUpdated");
+
+                    b.Property<string>("Name");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Areas");
+                });
 
             modelBuilder.Entity("DomainModel.Meal", b =>
                 {
@@ -108,7 +125,7 @@ namespace Data.Migrations
 
                     b.Property<string>("Name");
 
-                    b.Property<int?>("RestaurantId");
+                    b.Property<int>("RestaurantId");
 
                     b.HasKey("Id");
 
@@ -124,6 +141,8 @@ namespace Data.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Address");
+
+                    b.Property<int?>("AreaId");
 
                     b.Property<DateTime>("DateCreated");
 
@@ -144,6 +163,8 @@ namespace Data.Migrations
                     b.Property<int?>("RestaurantCategoryId");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("AreaId");
 
                     b.HasIndex("RestaurantCategoryId");
 
@@ -240,13 +261,18 @@ namespace Data.Migrations
 
             modelBuilder.Entity("DomainModel.MealType", b =>
                 {
-                    b.HasOne("DomainModel.Restaurant")
+                    b.HasOne("DomainModel.Restaurant", "Restaurant")
                         .WithMany("MealTypes")
-                        .HasForeignKey("RestaurantId");
+                        .HasForeignKey("RestaurantId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("DomainModel.Restaurant", b =>
                 {
+                    b.HasOne("DomainModel.Area", "Area")
+                        .WithMany()
+                        .HasForeignKey("AreaId");
+
                     b.HasOne("DomainModel.RestaurantCategory", "RestaurantCategory")
                         .WithMany()
                         .HasForeignKey("RestaurantCategoryId");

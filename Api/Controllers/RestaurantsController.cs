@@ -16,11 +16,13 @@ namespace Api.Controllers
     public class RestaurantsController : ControllerBase
     {
         IRestaurantService restaurantService;
+        IMealService mealService;
         private readonly IMapper mapper;
-        public RestaurantsController(IRestaurantService _restaurantService, IMapper _mapper)
+        public RestaurantsController(IRestaurantService _restaurantService, IMapper _mapper, IMealService _mealService)
         {
             restaurantService = _restaurantService;
             mapper = _mapper;
+            mealService = _mealService;
         }
 
         [HttpGet]
@@ -44,7 +46,9 @@ namespace Api.Controllers
                     PhoneNumber = rest.PhoneNumber,
                     Priority = rest.Priority,
                     DateCreated = rest.DateCreated,
-                    DateUpdated = rest.DateUpdated
+                    DateUpdated = rest.DateUpdated,
+                    Area = rest.Area?.Name,
+                    Category = rest.RestaurantCategory?.Name
                 };
 
                 // get images
@@ -111,7 +115,9 @@ namespace Api.Controllers
                 Longitude = restaurantRequest.Longitude,
                 Latitude = restaurantRequest.Latitude,
                 PhoneNumber = restaurantRequest.PhoneNumber,
-                Priority = restaurantRequest.Priority
+                Priority = restaurantRequest.Priority,
+                RestaurantCategoryId = restaurantRequest.RestaurantCategoryId,
+                AreaId = restaurantRequest.AreaId
             };
 
             // save images
@@ -145,7 +151,7 @@ namespace Api.Controllers
         [HttpGet("meal-categories")]
         public IActionResult GetMealCategories()
         {
-            var mealCategories = restaurantService.GetMealCategories();
+            var mealCategories = restaurantService.GetAreas();
             return Ok(mealCategories);
         }
 
@@ -155,6 +161,54 @@ namespace Api.Controllers
         {
             var mealTypes = restaurantService.GetAllMealTypesByRestaurantId(restaurantId);
             return Ok(mealTypes);
+        }
+
+        [HttpPost]
+        [Route("add-meal")]
+        public IActionResult AddMeal([FromBody] MealCreateRequestDTO mealRequest)
+        {
+            if (mealRequest == null)
+                return BadRequest("Request is null!");
+
+            if (!ModelState.IsValid)
+                return BadRequest("Data validation errors!");
+
+            try
+            {
+                var meal = new Meal
+                {
+                    Name = mealRequest.Name,
+                    Description = mealRequest.Description,
+                    Price = mealRequest.Price,
+                    GeneralPriority = mealRequest.GeneralPriority,
+                    LocalPriority = mealRequest.LocalPriority,
+                    ImageUrl = mealRequest.ImageUrl,
+                    MealCategoryId = mealRequest.MealCategoryId,
+                    RestaurantId = mealRequest.RestaurantId,
+                    MealTypeId = mealRequest.MealTypeId
+                };
+                mealService.AddMeal(meal);
+                return Ok("Meal added!");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest("An error occured while saving meal");
+            }
+           
+        }
+
+        [HttpGet("categories")]
+        public IActionResult GetRestaurantCategories()
+        {
+            var categories = restaurantService.GetRestaurantCategories();
+            return Ok(categories);
+        }
+
+        [HttpGet("areas")]
+        public IActionResult GetAreas()
+        {
+            var areas = restaurantService.GetAreas();
+            return Ok(areas);
         }
     }
 }

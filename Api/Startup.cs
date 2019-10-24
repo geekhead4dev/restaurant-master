@@ -42,7 +42,10 @@ namespace RestaurantProject
             );
             services.AddTransient<IUnitOfWork, UnitOfWork>();
             services.AddTransient<IRestaurantService, RestaurantService>();
+            services.AddTransient<IMealService, MealService>();
+
             services.AddTransient<IRestaurantRepository, RestaurantRepository>();
+            services.AddTransient<IMealRepository, MealRepository>();
 
             // Register Automaper
             var apiMappings = new MappingProfiles(); 

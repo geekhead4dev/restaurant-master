@@ -21,6 +21,13 @@ namespace ServiceLayer.DTO
         [Required]
         public string Description { get; set; }
         public int Priority { get; set; }
+
+
+        [Required]
+        public int RestaurantCategoryId { get; set; }
+        [Required]
+        public int AreaId { get; set; }
+
         public List<RestaurantImage> Images { get; set; }
         public List<WorkingHour> WorkingHours { get; set; }
     }
@@ -33,11 +40,14 @@ namespace ServiceLayer.DTO
         public Decimal Longitude { get; set; } 
         public Decimal Latitude { get; set; } 
         public string Description { get; set; }
-        public int Priority { get; set; }
+        public int Priority { get; set; } 
+        public string Area { get; set; }
+        public string Category { get; set; }
+
         public DateTime DateUpdated { get; set; }
         public DateTime DateCreated { get; set; }
         public List<ImageResponseDTO> Images { get; set; }
-        public List<WorkingHourResponseDTO> WorkingHours { get; set; }
+        public List<WorkingHourResponseDTO> WorkingHours { get; set; } 
     }
     public class ImageResponseDTO
     {
@@ -51,5 +61,29 @@ namespace ServiceLayer.DTO
         public string Day { get; set; }
         public string FromTime { get; set; }
         public string ToTime { get; set; }
+    }
+   
+    public class MealCreateRequestDTO
+    {
+        [Required]
+        [Display(Name = "Meal Name")]
+        public string Name { get; set; }
+
+        public string ImageUrl { get; set; }
+        public string Description { get; set; }
+        public decimal Price { get; set; }
+
+        [Display(Name = "Local Priority")]
+        public int LocalPriority { get; set; }
+
+        [Display(Name = "General Priority")]
+        public int GeneralPriority { get; set; }
+
+        [Required]
+        public int RestaurantId { get; set; }
+        [Required]
+        public int MealCategoryId { get; set; }
+        [Required]
+        public int MealTypeId { get; set; }
     }
 }

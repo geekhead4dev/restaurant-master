@@ -79,8 +79,8 @@
             Meal Type
         </div>
         <div class=" col-md-10">
-           <select name="selectMealType" id="selectMealType">
-               <option value=@null>Select</option>
+           <select name="MealTypeId" id="MealTypeId">
+               <option value=0>Select</option>
            </select>
         </div>
     </div>
@@ -115,7 +115,7 @@
             processData: false,
             success: function (response) {
                 if (response.success) {
-                    var mt = document.getElementById("selectMealType")
+                    var mt = document.getElementById("MealTypeId")
                     var length = mt.options.length;
                     for (i = 1; i < length; i++) {
                         mt.options[i] = null;

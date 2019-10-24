@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DomainModel
 {
@@ -13,10 +14,19 @@ namespace DomainModel
         public string Description { get; set; }
         public int Priority { get; set; }
         public List<Meal> Meals { get; set; }
+
         public virtual List<RestaurantImage> RestaurantImages { get; set; }
-        public RestaurantCategory RestaurantCategory { get; set; }
+
+        [ForeignKey("RestaurantCategory")]
+        public int? RestaurantCategoryId { get; set; }
+        public virtual RestaurantCategory RestaurantCategory { get; set; }
+
+        [ForeignKey("Area")]
+        public int? AreaId { get; set; }
+        public virtual Area Area { get; set; }
+
         public virtual List<WorkingHour> WorkingHours { get; set; }
-        public List<MealType> MealTypes { get; set; }
+        public virtual List<MealType> MealTypes { get; set; }
 
     }
 }

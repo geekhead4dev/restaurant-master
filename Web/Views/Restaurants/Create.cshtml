@@ -64,6 +64,25 @@
             @Html.EditorFor(m => m.Priority)
         </div>
     </div>
+
+    <div class="form-group row">
+        <div class="col-md-2">
+            Select Area
+        </div>
+        <div class=" col-md-10">
+            @Html.DropDownList("AreaId", new SelectList(ViewBag.AreaId, "Id", "Name"), "Select")
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <div class="col-md-2">
+            Restaurant Category
+        </div>
+        <div class=" col-md-10">
+            @Html.DropDownList("RestaurantCategoryId", new SelectList(ViewBag.RestaurantCategoryId, "Id", "Name"), "Select")
+        </div>
+    </div>
+
     <div class="form-group row">
         <div class="col-md-2">
             @Html.DisplayNameFor(m => m.Description)
@@ -95,7 +114,7 @@
                     <option>@i</option>
                 }
             </select>
-            <select name="MondayFromMinute"> 
+            <select name="MondayFromMinute">
                 @for (int i = 0; i < 60; i++)
                 {
                     <option>@i</option>
@@ -109,7 +128,7 @@
                     <option>@i</option>
                 }
             </select>
-            <select name="MondayToMinute"> 
+            <select name="MondayToMinute">
                 @for (int i = 0; i < 60; i++)
                 {
                     <option>@i</option>
@@ -131,7 +150,7 @@
                     <option>@i</option>
                 }
             </select>
-            <select name="TuesdayFromMinute"> 
+            <select name="TuesdayFromMinute">
                 @for (int i = 0; i < 60; i++)
                 {
                     <option>@i</option>
@@ -145,7 +164,7 @@
                     <option>@i</option>
                 }
             </select>
-            <select name="TuesdayToMinute"> 
+            <select name="TuesdayToMinute">
                 @for (int i = 0; i < 60; i++)
                 {
                     <option>@i</option>
@@ -167,7 +186,7 @@
                     <option>@i</option>
                 }
             </select>
-            <select name="WednesdayFromMinute"> 
+            <select name="WednesdayFromMinute">
                 @for (int i = 0; i < 60; i++)
                 {
                     <option>@i</option>
@@ -181,7 +200,7 @@
                     <option>@i</option>
                 }
             </select>
-            <select name="WednesdayToMinute"> 
+            <select name="WednesdayToMinute">
                 @for (int i = 0; i < 60; i++)
                 {
                     <option>@i</option>
@@ -203,7 +222,7 @@
                     <option>@i</option>
                 }
             </select>
-            <select name="ThursdayFromMinute"> 
+            <select name="ThursdayFromMinute">
                 @for (int i = 0; i < 60; i++)
                 {
                     <option>@i</option>
@@ -217,7 +236,7 @@
                     <option>@i</option>
                 }
             </select>
-            <select name="ThursdayToMinute"> 
+            <select name="ThursdayToMinute">
                 @for (int i = 0; i < 60; i++)
                 {
                     <option>@i</option>
@@ -239,7 +258,7 @@
                     <option>@i</option>
                 }
             </select>
-            <select name="FridayFromMinute"> 
+            <select name="FridayFromMinute">
                 @for (int i = 0; i < 60; i++)
                 {
                     <option>@i</option>
@@ -253,7 +272,7 @@
                     <option>@i</option>
                 }
             </select>
-            <select name="FridayToMinute"> 
+            <select name="FridayToMinute">
                 @for (int i = 0; i < 60; i++)
                 {
                     <option>@i</option>
@@ -275,7 +294,7 @@
                     <option>@i</option>
                 }
             </select>
-            <select name="SaturdayFromMinute"> 
+            <select name="SaturdayFromMinute">
                 @for (int i = 0; i < 60; i++)
                 {
                     <option>@i</option>
@@ -289,7 +308,7 @@
                     <option>@i</option>
                 }
             </select>
-            <select name="SaturdayToMinute"> 
+            <select name="SaturdayToMinute">
                 @for (int i = 0; i < 60; i++)
                 {
                     <option>@i</option>
@@ -311,7 +330,7 @@
                     <option>@i</option>
                 }
             </select>
-            <select name="SundayFromMinute"> 
+            <select name="SundayFromMinute">
                 @for (int i = 0; i < 60; i++)
                 {
                     <option>@i</option>
@@ -326,7 +345,7 @@
                     <option>@i</option>
                 }
             </select>
-            <select name="SundayToMinute"> 
+            <select name="SundayToMinute">
                 @for (int i = 0; i < 60; i++)
                 {
                     <option>@i</option>
