@@ -1,0 +1,14 @@
+C:\Users\Sodiq\Documents\Source\Repos\Restaurant-Project-master\ServiceLayer\bin\Debug\netcoreapp2.0\ServiceLayer.deps.json
+C:\Users\Sodiq\Documents\Source\Repos\Restaurant-Project-master\ServiceLayer\bin\Debug\netcoreapp2.0\ServiceLayer.dll
+C:\Users\Sodiq\Documents\Source\Repos\Restaurant-Project-master\ServiceLayer\bin\Debug\netcoreapp2.0\ServiceLayer.pdb
+C:\Users\Sodiq\Documents\Source\Repos\Restaurant-Project-master\ServiceLayer\obj\Debug\netcoreapp2.0\ServiceLayer.csprojAssemblyReference.cache
+C:\Users\Sodiq\Documents\Source\Repos\Restaurant-Project-master\ServiceLayer\obj\Debug\netcoreapp2.0\ServiceLayer.csproj.CoreCompileInputs.cache
+C:\Users\Sodiq\Documents\Source\Repos\Restaurant-Project-master\ServiceLayer\obj\Debug\netcoreapp2.0\ServiceLayer.AssemblyInfoInputs.cache
+C:\Users\Sodiq\Documents\Source\Repos\Restaurant-Project-master\ServiceLayer\obj\Debug\netcoreapp2.0\ServiceLayer.AssemblyInfo.cs
+C:\Users\Sodiq\Documents\Source\Repos\Restaurant-Project-master\ServiceLayer\obj\Debug\netcoreapp2.0\ServiceLayer.dll
+C:\Users\Sodiq\Documents\Source\Repos\Restaurant-Project-master\ServiceLayer\obj\Debug\netcoreapp2.0\ServiceLayer.pdb
+C:\Users\Sodiq\Documents\Source\Repos\Restaurant-Project-master\ServiceLayer\bin\Debug\netcoreapp2.0\Data.dll
+C:\Users\Sodiq\Documents\Source\Repos\Restaurant-Project-master\ServiceLayer\bin\Debug\netcoreapp2.0\DomainModel.dll
+C:\Users\Sodiq\Documents\Source\Repos\Restaurant-Project-master\ServiceLayer\bin\Debug\netcoreapp2.0\Data.pdb
+C:\Users\Sodiq\Documents\Source\Repos\Restaurant-Project-master\ServiceLayer\bin\Debug\netcoreapp2.0\DomainModel.pdb
+C:\Users\Sodiq\Documents\Source\Repos\Restaurant-Project-master\ServiceLayer\obj\Debug\netcoreapp2.0\ServiceLayer.csproj.CopyComplete

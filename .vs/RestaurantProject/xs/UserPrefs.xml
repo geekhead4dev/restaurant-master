@@ -1,0 +1,62 @@
+﻿<Properties StartupConfiguration="{B51BF9CE-FE57-4FA0-A173-3C76F41882D2}|Default">
+  <MonoDevelop.Ide.Workbench>
+    <Files>
+      <File FileName="Data/AppDbContext.cs" Line="18" Column="7" />
+      <File FileName="Data/RepoInterface/IRepository.cs" Line="19" Column="39" />
+      <File FileName="DomainModel/BaseEntity.cs" Line="8" Column="14" />
+      <File FileName="DomainModel/Meal.cs" Line="16" Column="47" />
+      <File FileName="DomainModel/MealCategory.cs" Line="3" Column="41" />
+      <File FileName="Data/Repository/Repository.cs" Line="17" Column="26" />
+      <File FileName="Data/RepoInterface/IRestaurantRepository.cs" Line="5" Column="22" />
+      <File FileName="Data/Repository/RestaurantRespository.cs" Line="11" Column="5" />
+      <File FileName="Data/RepoInterface/IMealRepository.cs" Line="6" Column="53" />
+      <File FileName="Data/RepoInterface/IMealCategoryRepository.cs" Line="6" Column="61" />
+      <File FileName="Data/RepoInterface/IMealContentRepository.cs" Line="6" Column="60" />
+      <File FileName="Data/RepoInterface/IMealTypeRepository.cs" Line="6" Column="34" />
+      <File FileName="Data/RepoInterface/IRestaurantCategoryRepository.cs" Line="6" Column="71" />
+      <File FileName="Data/RepoInterface/IRestaurantImageRepository.cs" Line="8" Column="8" />
+      <File FileName="Data/RepoInterface/IWorkingHourRepository.cs" Line="8" Column="1" />
+      <File FileName="Data/Repository/MealCategoryRepository.cs" Line="13" Column="24" />
+      <File FileName="Data/Repository/MealContentRepository.cs" Line="13" Column="39" />
+      <File FileName="Data/Repository/MealRepository.cs" Line="19" Column="10" />
+      <File FileName="Data/Repository/MealTypeRepository.cs" Line="14" Column="10" />
+      <File FileName="Data/Repository/RestaurantCategoryRepository.cs" Line="13" Column="39" />
+      <File FileName="Data/Repository/RestaurantImageRepository.cs" Line="11" Column="10" />
+      <File FileName="Data/Repository/WorkingHourRepository.cs" Line="18" Column="14" />
+      <File FileName="DomainModel/Restaurant.cs" Line="13" Column="35" />
+      <File FileName="DomainModel/RestaurantImage.cs" Line="7" Column="45" />
+      <File FileName="DomainModel/RestaurantCategory.cs" Line="5" Column="39" />
+      <File FileName="DomainModel/MealType.cs" Line="5" Column="39" />
+      <File FileName="DomainModel/MealContent.cs" Line="5" Column="42" />
+      <File FileName="DomainModel/WorkingHour.cs" Line="10" Column="2" />
+      <File FileName="Data/UnitOfWork/IUnitOfWork.cs" Line="1" Column="1" />
+      <File FileName="Data/UnitOfWork/UnitOfWork.cs" Line="19" Column="21" />
+      <File FileName="ServiceLayer/IRestaurantService.cs" Line="3" Column="21" />
+      <File FileName="ServiceLayer/RestaurantService.cs" Line="3" Column="27" />
+      <File FileName="ServiceLayer/DTO/AddRestaurantDTO.cs" Line="9" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="RestaurantProject" expanded="True" selected="True">
+            <Node name="ServiceLayer" expanded="True">
+              <Node name="Dependencies" expanded="True">
+                <Node name="SdkDependencies" expanded="True" />
+              </Node>
+              <Node name="DTO" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <DisabledProjects>
+    <String>Api/RestaurantProject.csproj</String>
+  </DisabledProjects>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

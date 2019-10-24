@@ -1,0 +1,4 @@
+/Users/osobowale/Desktop/RestaurantProject/DomainModel/obj/Debug/netstandard2.0/DomainModel.csprojAssemblyReference.cache
+/Users/osobowale/Desktop/RestaurantProject/DomainModel/obj/Debug/netstandard2.0/DomainModel.csproj.CoreCompileInputs.cache
+/Users/osobowale/Desktop/RestaurantProject/DomainModel/obj/Debug/netstandard2.0/DomainModel.AssemblyInfoInputs.cache
+/Users/osobowale/Desktop/RestaurantProject/DomainModel/obj/Debug/netstandard2.0/DomainModel.AssemblyInfo.cs
